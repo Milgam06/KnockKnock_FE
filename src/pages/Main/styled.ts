@@ -35,8 +35,11 @@ export const SubTitle = styled.span<FontValue>`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 5rem;
-  width: 10rem;
-  height: 10rem;
-  border: 1px solid red;
+  margin-top: 10rem;
+  width: 100% auto;
+  height: 100% auto;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

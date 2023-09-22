@@ -40,5 +40,6 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--color-backgroud);
     color: var(--color-text-primary);
     border: none;
+    letter-spacing: 0.3rem;
   }
 `;

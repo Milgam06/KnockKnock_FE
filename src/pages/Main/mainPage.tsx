@@ -26,13 +26,13 @@ export const MainPage: React.FC = () => {
       </S.TitleContainer>
       <S.ButtonContainer>
         <ContentsButton
-          width={5}
-          height={5}
-          sizes={1}
-          weight={100}
+          width={40}
+          height={15}
+          sizes={5}
+          weight={600}
           onFunc={onClick}
           colors={"none"}
-          message={"hello"}
+          message={"문 두드리기"}
         ></ContentsButton>
       </S.ButtonContainer>
     </S.ContentWrapper>
