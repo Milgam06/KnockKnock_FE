@@ -20,9 +20,14 @@ export const ButtonContainer = styled.button<ButtonValue>`
   text-align: center;
   background-color: #f86e51;
   border: none;
+  border-radius: 8rem;
+  cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    width: ${(props) => props.width + 1}rem;
-    height: ${(props) => props.height + 1}rem;
+    /* border-radius: 5rem; */
+    font-size: ${(props) => props.sizes + 1}rem;
+    background-color: #000;
+    color: #f86e51;
+    scale: 1.1;
   }
 `;
