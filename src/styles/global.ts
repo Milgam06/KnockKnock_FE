@@ -40,6 +40,18 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--color-backgroud);
     color: var(--color-text-primary);
     border: none;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
   }
+`;
+
+export const AuthInput = `
+  margin-top: 5rem;
+  width: 100rem;
+  height: 10rem;
+  font-size: 3rem;
+  padding-left: 2rem;
+  color: #757575;
+  background-color: #edeaea;
+  border: none;
+  border-bottom: 1px solid black;
 `;

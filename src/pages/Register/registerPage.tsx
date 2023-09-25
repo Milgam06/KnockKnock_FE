@@ -46,8 +46,6 @@ export const RegisterPage: React.FC = () => {
           placeholder="이메일"
           {...register("email", {
             required: "이메일은 필수입니다",
-            minLength: 2,
-            maxLength: 12,
           })}
         />
         <S.ErrorMsg>{errors.userid?.message}</S.ErrorMsg>
@@ -61,6 +59,7 @@ export const RegisterPage: React.FC = () => {
         />
         <S.ErrorMsg>{errors.userid?.message}</S.ErrorMsg>
         <S.RegisterInput
+          type="password"
           placeholder="비밀번호"
           {...register("password", {
             required: "비밀번호는 필수입니다",
