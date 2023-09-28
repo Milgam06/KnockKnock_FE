@@ -18,7 +18,7 @@ export const NavbarContentContainer = styled.div`
 `;
 
 export const RogoWrapper = styled.div`
-  width: 30rem;
+  width: 35rem;
   height: 10rem;
   display: flex;
   align-items: center;
@@ -32,6 +32,7 @@ export const FuncBtnWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  /* border: 1px solid red; */
 `;
 
 export const TextImage = styled.img`
@@ -64,5 +65,6 @@ export const FunctionButton = styled.button<FontValue>`
     color: #ec9988;
     transform: translateY(-0.4rem);
     text-shadow: 0 0.3em 0.5em lightgray;
+    scale: 1.1;
   }
 `;
