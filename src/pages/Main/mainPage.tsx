@@ -1,10 +1,12 @@
 import React from "react";
 import * as S from "./styled";
 import { ContentsButton } from "../../components";
+import { useNavigate } from "react-router-dom";
 
 export const MainPage: React.FC = () => {
-  const onClick = () => {
-    alert("hello");
+  const navigate = useNavigate();
+  const onGoCategory = () => {
+    navigate("/category");
   };
 
   return (
@@ -30,7 +32,7 @@ export const MainPage: React.FC = () => {
           height={15}
           sizes={5}
           weight={600}
-          onFunc={onClick}
+          onFunc={onGoCategory}
           colors={"none"}
           message={"문 두드리기"}
         ></ContentsButton>

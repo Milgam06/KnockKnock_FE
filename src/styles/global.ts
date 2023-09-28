@@ -51,7 +51,8 @@ export const AuthInput = `
   font-size: 3rem;
   padding-left: 2rem;
   color: #757575;
-  background-color: #edeaea;
+  background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
+  
 `;
