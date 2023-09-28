@@ -18,7 +18,7 @@ export const NavbarContentContainer = styled.div`
 `;
 
 export const RogoWrapper = styled.div`
-  width: 35rem;
+  width: 30rem;
   height: 10rem;
   display: flex;
   align-items: center;

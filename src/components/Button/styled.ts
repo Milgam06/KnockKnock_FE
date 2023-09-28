@@ -26,8 +26,8 @@ export const ButtonContainer = styled.button<ButtonValue>`
   &:hover {
     /* border-radius: 5rem; */
     font-size: ${(props) => props.sizes + 1}rem;
-    background-color: #000;
-    color: #f86e51;
+    background-color: #ffa18d;
+    color: #fff;
     scale: 1.1;
   }
 `;
