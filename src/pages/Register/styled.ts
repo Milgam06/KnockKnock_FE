@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { AuthInput } from "../../styles";
 
 export const RegisterTitleBox = styled.div`
   display: flex;
@@ -24,15 +25,15 @@ export const RegisterForm = styled.form`
 `;
 
 export const RegisterInput = styled.input`
-  margin-top: 5rem;
-  width: 100rem;
-  height: 10rem;
-  font-size: 3rem;
-  padding-left: 2rem;
-  color: #757575;
-  background-color: #edeaea;
-  border: none;
-  border-bottom: 1px solid black;
+  ${AuthInput}
+`;
+export const RegisterPwInput = styled.input`
+  ${AuthInput};
+  letter-spacing: 1rem;
+  text-overflow: ellipsis;
+  ::placeholder {
+    letter-spacing: normal;
+  }
 `;
 
 export const ErrorMsg = styled.span`

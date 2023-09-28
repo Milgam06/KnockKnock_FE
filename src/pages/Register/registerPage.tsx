@@ -19,10 +19,10 @@ export const RegisterPage: React.FC = () => {
     formState: { errors },
   } = useForm<InputValue>();
   const onGoLogin = () => {
-    navigate("/");
+    navigate("/login");
   };
 
-  const onValid = () => {
+  const onSubmit = () => {
     let uid = watch("userid");
     let pwd = watch("password");
     let eml = watch("email");
@@ -39,9 +39,9 @@ export const RegisterPage: React.FC = () => {
   return (
     <>
       <S.RegisterTitleBox>
-        <S.ResiterTitle>회원 가입</S.ResiterTitle>
+        <S.ResiterTitle>회원가입</S.ResiterTitle>
       </S.RegisterTitleBox>
-      <S.RegisterForm onSubmit={handleSubmit(onValid)}>
+      <S.RegisterForm onSubmit={handleSubmit(onSubmit)}>
         <S.RegisterInput
           placeholder="이메일"
           {...register("email", {
@@ -58,7 +58,7 @@ export const RegisterPage: React.FC = () => {
           })}
         />
         <S.ErrorMsg>{errors.userid?.message}</S.ErrorMsg>
-        <S.RegisterInput
+        <S.RegisterPwInput
           type="password"
           placeholder="비밀번호"
           {...register("password", {
@@ -68,7 +68,7 @@ export const RegisterPage: React.FC = () => {
               message: "비밀번호는 최소 4자리여야 합니다.",
             },
             maxLength: {
-              value: 12,
+              value: 16,
               message: "비밀번호는 최대 12자리를 넘을 수 없습니다.",
             },
             validate: (password) => {

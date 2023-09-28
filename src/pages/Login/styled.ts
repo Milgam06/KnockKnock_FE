@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { AuthInput } from "../../styles";
 
 export const LoginTitleBox = styled.div`
   display: flex;
@@ -24,15 +25,15 @@ export const LoginForm = styled.form`
 `;
 
 export const LoginInput = styled.input`
-  margin-top: 8rem;
-  width: 100rem;
-  height: 8rem;
-  font-size: 3rem;
-  padding-left: 2rem;
-  color: #757575;
-  background-color: #edeaea;
-  border: none;
-  border-bottom: 1px solid black;
+  ${AuthInput}
+`;
+export const LoginPwInput = styled.input`
+  ${AuthInput};
+  letter-spacing: 1rem;
+  text-overflow: ellipsis;
+  ::placeholder {
+    letter-spacing: normal;
+  }
 `;
 
 export const BottomTextWrapper = styled.div`
