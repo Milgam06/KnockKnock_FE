@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const TitleWrapper = styled.div`
   height: 15rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
   /* border: 1px solid red; */
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@ export const SubTitle = styled.span`
 `;
 
 export const ButtonContentWrapper = styled.div`
-  margin-top: 5rem;
+  margin-top: 7rem;
   height: auto;
   /* border: 1px solid red; */
   display: flex;
@@ -43,5 +43,5 @@ export const ButtonContent = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 130rem;
-  height: 45rem;
+  height: 40rem;
 `;
