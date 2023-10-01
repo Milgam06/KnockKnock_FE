@@ -28,9 +28,9 @@ export const MainPage: React.FC = () => {
       </S.TitleContainer>
       <S.ButtonContainer>
         <ContentsButton
-          width={40}
-          height={15}
-          sizes={5}
+          width={35}
+          height={13}
+          sizes={4}
           weight={600}
           onFunc={onGoCategory}
           colors={"none"}
