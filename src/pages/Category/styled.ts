@@ -12,10 +12,10 @@ export const TitleWrapper = styled.div`
 export const InnerTitleBox = styled.div`
   /* border: 1px solid red; */
   width: 120rem;
-  height: 15rem;
+  height: 13rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const MainTitle = styled.span`
