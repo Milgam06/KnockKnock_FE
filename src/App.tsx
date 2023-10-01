@@ -1,10 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import { CategoryPage, RegisterPage } from "./pages";
-import { CommunityPage } from "./pages/Community/communityPage";
-import { LoginPage } from "./pages/Login/loginPage";
-import { MainPage } from "./pages/Main/mainPage";
+import {
+  CategoryPage,
+  RegisterPage,
+  MainPage,
+  LoginPage,
+  CommunityPage,
+  NotFoundPage,
+} from "./pages";
 
 export const App: React.FC = () => {
   return (
@@ -14,6 +18,7 @@ export const App: React.FC = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/category" element={<CategoryPage />} />
       <Route path="/community/:comm" element={<CommunityPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
