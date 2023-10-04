@@ -7,7 +7,7 @@ export const NotFoundContainer = styled.div`
   flex-direction: column;
   height: auto;
   /* border: 1px solid red; */
-  margin-top: 10rem;
+  margin-top: 20rem;
 `;
 
 export const NotFoundTitle = styled.span`

@@ -5,7 +5,7 @@ export const NotFoundPage = () => {
     <>
       <S.NotFoundContainer>
         <S.NotFoundTitle>404</S.NotFoundTitle>
-        <S.NotFoundMessage>Error: 404 Not Found</S.NotFoundMessage>
+        <S.NotFoundMessage>{"Error{404_N0T_fouND}"}</S.NotFoundMessage>
       </S.NotFoundContainer>
     </>
   );
