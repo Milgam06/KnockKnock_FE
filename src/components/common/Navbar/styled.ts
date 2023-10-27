@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { FontValue } from "../../styles";
+import { FontValue } from "../../../styles";
 
 export const NavbarWrapper = styled.div`
   display: flex;

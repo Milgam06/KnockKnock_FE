@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
-import { LogoJpg, KnockJpg } from "../../assets/Image";
+import { LogoJpg, KnockJpg } from "../../../assets/Image";
 
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();

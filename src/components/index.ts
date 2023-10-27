@@ -1,2 +1,2 @@
-export * from "./Navbar/Navbar";
-export * from "./Button/Button";
+export * from "./common/Navbar/Navbar";
+export * from "./common/Button/Button";
