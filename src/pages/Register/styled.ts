@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { AuthInput } from "../../styles";
+import {
+  AuthFormBox,
+  AuthInput,
+  AuthPwInput,
+  AuthErrorMsg,
+} from "../../components/Auth/styled";
 
 export const RegisterTitleBox = styled.div`
   display: flex;
@@ -15,11 +20,7 @@ export const ResiterTitle = styled.span`
 `;
 
 export const RegisterForm = styled.form`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: auto;
+  ${AuthFormBox}
   margin-top: 1rem;
   /* border: 1px solid red; */
 `;
@@ -28,17 +29,11 @@ export const RegisterInput = styled.input`
   ${AuthInput}
 `;
 export const RegisterPwInput = styled.input`
-  ${AuthInput};
-  letter-spacing: 1rem;
-  text-overflow: ellipsis;
-  ::placeholder {
-    letter-spacing: normal;
-  }
+  ${AuthPwInput}
 `;
 
 export const ErrorMsg = styled.span`
-  font-size: 1rem;
-  color: red;
+  ${AuthErrorMsg};
 `;
 
 export const BottomTextWrapper = styled.div`

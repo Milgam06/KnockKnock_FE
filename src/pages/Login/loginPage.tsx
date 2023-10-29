@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { InputValue } from "../Register/registerPage";
+import { AuthFormElements } from "../../components";
 import * as S from "./styled";
 
 export const LoginPage: React.FC = () => {
@@ -11,7 +11,7 @@ export const LoginPage: React.FC = () => {
     watch,
     handleSubmit,
     formState: { errors },
-  } = useForm<InputValue>();
+  } = useForm<AuthFormElements>();
   const onGoRegister = () => {
     navigate("/register");
   };

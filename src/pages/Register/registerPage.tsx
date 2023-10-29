@@ -2,22 +2,17 @@ import { useForm } from "react-hook-form";
 import * as S from "./styled";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-export interface InputValue {
-  email?: string;
-  userid?: string;
-  password: string;
-}
+import { AuthFormElements } from "../../components";
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState<InputValue>();
+  const [userData, setUserData] = useState<AuthFormElements>();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<InputValue>();
+  } = useForm<AuthFormElements>();
   const onGoLogin = () => {
     navigate("/login");
   };
