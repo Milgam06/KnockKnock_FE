@@ -1,3 +1,3 @@
 export * from "./common/Navbar/Navbar";
 export * from "./common/Button/Button";
-export * from "./Auth/authForm";
+export * from "./auth/AuthForm/authForm";

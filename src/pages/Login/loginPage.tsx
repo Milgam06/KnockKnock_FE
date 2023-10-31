@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AuthFormElements,
@@ -7,7 +6,6 @@ import {
   AuthForm,
   UnderAuthForm,
 } from "../../components";
-import * as S from "./styled";
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
