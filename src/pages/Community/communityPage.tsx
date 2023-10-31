@@ -3,12 +3,12 @@ import * as S from "./styled";
 import { NotFoundPage } from "../";
 
 export const GenreArray: readonly string[] = [
-  "GAME",
-  "SPORTS",
   "ART",
-  "HEALTH",
   "COOK",
+  "GAME",
+  "HEALTH",
   "MUSIC",
+  "SPORTS",
 ];
 
 export const CommunityPage: React.FC = () => {
