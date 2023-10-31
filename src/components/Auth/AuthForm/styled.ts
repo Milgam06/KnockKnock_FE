@@ -67,11 +67,18 @@ export const AuthSubmitButtonBox = styled.div`
 `;
 
 export const AuthSubmitButton = styled.button`
-  width: 100rem;
+  width: 90rem;
   height: 5rem;
   font-size: 3rem;
   border-radius: 1rem;
   letter-spacing: 0.3rem;
+  color: ${colors.primary};
+  border-color: ${colors.primary};
+  transition: all 0.3s;
+  &:hover {
+    scale: 1.1;
+    color: ${colors.secondary};
+  }
 `;
 
 export const BottomTextBoxWrapper = styled.div`
