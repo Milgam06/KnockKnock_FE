@@ -2,7 +2,12 @@ import { useForm } from "react-hook-form";
 import * as S from "./styled";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthFormElements } from "../../components";
+import {
+  AuthFormElements,
+  AuthFormTitle,
+  AuthForm,
+  UnderAuthForm,
+} from "../../components";
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
@@ -33,18 +38,18 @@ export const RegisterPage: React.FC = () => {
   }, [userData]);
   return (
     <>
-      <S.RegisterTitleBox>
-        <S.ResiterTitle>회원가입</S.ResiterTitle>
-      </S.RegisterTitleBox>
-      <S.RegisterForm onSubmit={handleSubmit(onSubmit)}>
-        <S.RegisterInput
+      <AuthFormTitle>
+        <AuthFormTitle.Title>회원가입</AuthFormTitle.Title>
+      </AuthFormTitle>
+      <AuthForm onSubmit={handleSubmit(onSubmit)}>
+        <AuthForm.Input
           placeholder="이메일"
           {...register("email", {
             required: "이메일은 필수입니다",
           })}
         />
-        <S.ErrorMsg>{errors.userid?.message}</S.ErrorMsg>
-        <S.RegisterInput
+        <AuthForm.ErrorMsg>{errors.email?.message}</AuthForm.ErrorMsg>
+        <AuthForm.Input
           placeholder="닉네임"
           {...register("userid", {
             required: "닉네임은 필수입니다",
@@ -52,8 +57,8 @@ export const RegisterPage: React.FC = () => {
             maxLength: 12,
           })}
         />
-        <S.ErrorMsg>{errors.userid?.message}</S.ErrorMsg>
-        <S.RegisterPwInput
+        <AuthForm.ErrorMsg>{errors.userid?.message}</AuthForm.ErrorMsg>
+        <AuthForm.PwInput
           type="password"
           placeholder="비밀번호"
           {...register("password", {
@@ -87,14 +92,21 @@ export const RegisterPage: React.FC = () => {
             },
           })}
         />
-        <S.ErrorMsg>{errors.userid?.message}</S.ErrorMsg>
-      </S.RegisterForm>
-      <S.BottomTextWrapper>
-        <S.BottomTextBox>
-          <S.AskAccount>이미 회원이신가요?</S.AskAccount>
-          <S.GoLogin onClick={onGoLogin}>로그인</S.GoLogin>
-        </S.BottomTextBox>
-      </S.BottomTextWrapper>
+        <AuthForm.ErrorMsg>{errors.password?.message}</AuthForm.ErrorMsg>
+      </AuthForm>
+      <AuthForm.SubmitBtnBox>
+        <AuthForm.SubmitBtn>회원 가입</AuthForm.SubmitBtn>
+      </AuthForm.SubmitBtnBox>
+      <UnderAuthForm>
+        <UnderAuthForm.TextBox>
+          <UnderAuthForm.AskAccountText>
+            이미 회원이신가요?
+          </UnderAuthForm.AskAccountText>
+          <UnderAuthForm.SwitchFormFunc onClick={onGoLogin}>
+            로그인
+          </UnderAuthForm.SwitchFormFunc>
+        </UnderAuthForm.TextBox>
+      </UnderAuthForm>
     </>
   );
 };

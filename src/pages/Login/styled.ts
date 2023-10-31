@@ -1,9 +1,4 @@
 import styled from "@emotion/styled";
-import {
-  AuthFormBox,
-  AuthInput,
-  AuthPwInput,
-} from "../../components/Auth/styled";
 
 export const LoginTitleBox = styled.div`
   display: flex;
@@ -18,26 +13,13 @@ export const LoginTitle = styled.span`
   font-size: 7rem;
 `;
 
-export const LoginForm = styled.form`
-  ${AuthFormBox}
-  margin-top: 5rem;
-  /* border: 1px solid red; */
-`;
-
-export const LoginInput = styled.input`
-  ${AuthInput}
-`;
-export const LoginPwInput = styled.input`
-  ${AuthPwInput}
-`;
-
 export const BottomTextWrapper = styled.div`
   height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
   /* border: 1px solid red; */
-  margin-top: 16rem;
+  margin-top: 10rem;
 `;
 
 export const BottomTextBox = styled.div`

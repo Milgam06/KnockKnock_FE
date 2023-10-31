@@ -1,7 +1,12 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthFormElements } from "../../components";
+import {
+  AuthFormElements,
+  AuthFormTitle,
+  AuthForm,
+  UnderAuthForm,
+} from "../../components";
 import * as S from "./styled";
 
 export const LoginPage: React.FC = () => {
@@ -17,11 +22,11 @@ export const LoginPage: React.FC = () => {
   };
   return (
     <>
-      <S.LoginTitleBox>
-        <S.LoginTitle>로그인</S.LoginTitle>
-      </S.LoginTitleBox>
-      <S.LoginForm>
-        <S.LoginInput
+      <AuthFormTitle>
+        <AuthFormTitle.Title>로그인</AuthFormTitle.Title>
+      </AuthFormTitle>
+      <AuthForm>
+        <AuthForm.Input
           placeholder="이메일"
           {...register("email", {
             required: "이메일은 필수입니다",
@@ -31,7 +36,7 @@ export const LoginPage: React.FC = () => {
             },
           })}
         />
-        <S.LoginPwInput
+        <AuthForm.PwInput
           type="password"
           placeholder="비밀번호"
           {...register("password", {
@@ -65,13 +70,20 @@ export const LoginPage: React.FC = () => {
             },
           })}
         />
-      </S.LoginForm>
-      <S.BottomTextWrapper>
-        <S.BottomTextBox>
-          <S.AskRegister>회원이 아니신가요?</S.AskRegister>
-          <S.GoRegister onClick={onGoRegister}>회원가입</S.GoRegister>
-        </S.BottomTextBox>
-      </S.BottomTextWrapper>
+      </AuthForm>
+      <AuthForm.SubmitBtnBox>
+        <AuthForm.SubmitBtn>로그인</AuthForm.SubmitBtn>
+      </AuthForm.SubmitBtnBox>
+      <UnderAuthForm>
+        <UnderAuthForm.TextBox>
+          <UnderAuthForm.AskAccountText>
+            회원이 아니신가요?
+          </UnderAuthForm.AskAccountText>
+          <UnderAuthForm.SwitchFormFunc onClick={onGoRegister}>
+            회원가입
+          </UnderAuthForm.SwitchFormFunc>
+        </UnderAuthForm.TextBox>
+      </UnderAuthForm>
     </>
   );
 };
