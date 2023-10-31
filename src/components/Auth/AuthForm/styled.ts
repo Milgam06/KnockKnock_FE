@@ -3,14 +3,16 @@ import { colors } from "../../../styles";
 
 export const AuthFormBox = styled.form`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: auto;
+  margin-top: 5rem;
+  /* border: 1px solid black; */
 `;
 
 export const AuthInput = styled.input`
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 100rem;
   height: 10rem;
   font-size: 3rem;
@@ -22,7 +24,7 @@ export const AuthInput = styled.input`
 `;
 
 export const AuthPwInput = styled.input`
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 100rem;
   height: 10rem;
   font-size: 3rem;
@@ -44,10 +46,10 @@ export const AuthErrorMsg = styled.span`
 `;
 
 export const AuthFormTitleBox = styled.div`
+  margin-top: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 7rem;
   height: auto;
 `;
 
@@ -56,12 +58,12 @@ export const AuthFormTitle = styled.span`
 `;
 
 export const AuthSubmitButtonBox = styled.div`
+  margin-top: 8rem;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   /* border: 1px solid red; */
-  margin-top: 10rem;
 `;
 
 export const AuthSubmitButton = styled.button`
@@ -73,12 +75,12 @@ export const AuthSubmitButton = styled.button`
 `;
 
 export const BottomTextBoxWrapper = styled.div`
+  margin-top: 5rem;
   height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
   /* border: 1px solid red; */
-  margin-top: 5rem;
 `;
 
 export const BottomTextBox = styled.div`
