@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { colors } from "../../../styles";
 
 export interface ButtonValue {
   width: number;
@@ -18,7 +19,7 @@ export const ButtonContainer = styled.button<ButtonValue>`
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.colors};
   text-align: center;
-  background-color: #f86e51;
+  background-color: ${colors.tertiary};
   border: none;
   border-radius: 8rem;
   cursor: pointer;
