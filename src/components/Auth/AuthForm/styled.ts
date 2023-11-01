@@ -8,7 +8,7 @@ export const AuthFormBox = styled.form`
   flex-direction: column;
   height: auto;
   margin-top: 5rem;
-  /* border: 1px solid black; */
+  border: 1px solid red;
 `;
 
 export const AuthInput = styled.input`
@@ -21,6 +21,17 @@ export const AuthInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
+
+  @media screen and (max-width: 1350px) {
+    width: 80rem;
+    height: 8rem;
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 1050px) {
+    width: 60rem;
+    height: 6rem;
+    font-size: 2rem;
+  }
 `;
 
 export const AuthPwInput = styled.input`
@@ -37,6 +48,16 @@ export const AuthPwInput = styled.input`
   text-overflow: ellipsis;
   ::placeholder {
     letter-spacing: normal;
+  }
+  @media screen and (max-width: 1350px) {
+    width: 80rem;
+    height: 8rem;
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 1050px) {
+    width: 60rem;
+    height: 6rem;
+    font-size: 2rem;
   }
 `;
 
@@ -55,6 +76,12 @@ export const AuthFormTitleBox = styled.div`
 
 export const AuthFormTitle = styled.span`
   font-size: 7rem;
+  @media screen and (max-width: 1350px) {
+    font-size: 6rem;
+  }
+  @media screen and (max-width: 1050px) {
+    font-size: 5rem;
+  }
 `;
 
 export const AuthSubmitButtonBox = styled.div`
@@ -77,7 +104,19 @@ export const AuthSubmitButton = styled.button`
   transition: all 0.3s;
   &:hover {
     scale: 1.1;
-    color: ${colors.secondary};
+    color: #000;
+    border-color: #000;
+    box-shadow: 0 10px 10px 0 ${colors.primary};
+  }
+  @media screen and (max-width: 1350px) {
+    width: 70rem;
+    height: 4.5rem;
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 1050px) {
+    width: 50rem;
+    height: 4rem;
+    font-size: 2rem;
   }
 `;
 
