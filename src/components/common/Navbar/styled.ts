@@ -15,6 +15,9 @@ export const NavbarContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border: 1px solid red; */
+  @media screen and (max-width: 1350px) {
+  }
 `;
 
 export const RogoWrapper = styled.div`
@@ -32,7 +35,10 @@ export const FuncBtnWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* border: 1px solid red; */
+  border: 1px solid red;
+  @media screen and (max-width: 1050px) {
+    width: 20rem;
+  }
 `;
 
 export const TextImage = styled.img`
@@ -61,6 +67,11 @@ export const FunctionButton = styled.button<FontValue>`
   height: 5rem;
   border-radius: 2rem;
   transition: all 0.2s;
+  @media screen and (max-width: 1050px) {
+    width: 12rem;
+    height: 4rem;
+    font-size: ${(props) => props.sizes - 1}rem;
+  }
   &:hover {
     color: #ec9988;
     transform: translateY(-0.4rem);
