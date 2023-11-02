@@ -33,7 +33,6 @@ export const MainPage: React.FC = () => {
           sizes={4}
           weight={600}
           onFunc={onGoCategory}
-          colors={"none"}
           message={"문 두드리기"}
         ></ContentsButton>
       </S.ButtonContainer>

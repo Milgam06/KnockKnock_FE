@@ -7,7 +7,6 @@ export interface ButtonValue {
   height: number;
   sizes: number;
   weight: number;
-  colors?: string;
   message?: string | number | React.ReactNode;
   onFunc?: React.MouseEventHandler;
 }
@@ -17,7 +16,7 @@ export const ButtonContainer = styled.button<ButtonValue>`
   height: ${(props) => props.height}rem;
   font-size: ${(props) => props.sizes}rem;
   font-weight: ${(props) => props.weight};
-  color: ${(props) => props.colors};
+  color: #000;
   text-align: center;
   background-color: ${colors.tertiary};
   border: none;
@@ -25,10 +24,14 @@ export const ButtonContainer = styled.button<ButtonValue>`
   cursor: pointer;
   transition: all 0.2s;
   &:hover {
-    /* border-radius: 5rem; */
-    font-size: ${(props) => props.sizes + 0.5}rem;
-    background-color: #ffa18d;
-    color: #fff;
     scale: 1.1;
+    font-size: ${(props) => props.sizes + 0.5}rem;
+    color: #fff;
+    background-color: #ffa18d;
+    box-shadow: 0 10px 10px 0 ${colors.primary};
+  }
+  &:active {
+    scale: 1;
+    color: ${colors.primary};
   }
 `;

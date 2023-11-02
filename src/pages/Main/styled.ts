@@ -23,6 +23,7 @@ export const MainTitle = styled.span<FontValue>`
   font-size: ${(props) => props.sizes}rem;
   font-weight: ${(props) => props.weight};
   padding: 8rem;
+  text-align: center;
   /* border: 1px solid black; */
 `;
 
@@ -31,6 +32,7 @@ export const SubTitle = styled.span<FontValue>`
   font-weight: ${(props) => props.weight};
   color: ${(props) => props.colors};
   padding: 0.5rem;
+  text-align: center;
   /* border: 1px solid green; */
 `;
 

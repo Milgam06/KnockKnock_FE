@@ -35,7 +35,10 @@ export const FuncBtnWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  @media screen and (max-width: 1350px) {
+    width: 25rem;
+  }
   @media screen and (max-width: 1050px) {
     width: 20rem;
   }
@@ -67,8 +70,14 @@ export const FunctionButton = styled.button<FontValue>`
   height: 5rem;
   border-radius: 2rem;
   transition: all 0.2s;
+  /* border: 1px solid red; */
+  @media screen and (max-width: 1350px) {
+    width: 10rem;
+    height: 4rem;
+    font-size: ${(props) => props.sizes - 0.5}rem;
+  }
   @media screen and (max-width: 1050px) {
-    width: 12rem;
+    width: 8rem;
     height: 4rem;
     font-size: ${(props) => props.sizes - 1}rem;
   }

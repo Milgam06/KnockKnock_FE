@@ -10,7 +10,6 @@ export const ContentsButton: React.FC<ButtonValue> = ({
   weight,
   message,
   onFunc,
-  colors,
 }) => {
   return (
     <>
@@ -20,7 +19,6 @@ export const ContentsButton: React.FC<ButtonValue> = ({
         sizes={sizes}
         weight={weight}
         onClick={onFunc}
-        colors={colors}
       >
         {message}
       </S.ButtonContainer>

@@ -8,7 +8,7 @@ export const AuthFormBox = styled.form`
   flex-direction: column;
   height: auto;
   margin-top: 5rem;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 export const AuthInput = styled.input`
@@ -107,6 +107,13 @@ export const AuthSubmitButton = styled.button`
     color: #000;
     border-color: #000;
     box-shadow: 0 10px 10px 0 ${colors.primary};
+  }
+  &:active {
+    background-color: ${colors.tertiary};
+    color: #fff;
+    border: 0;
+    scale: 1;
+    box-shadow: none;
   }
   @media screen and (max-width: 1350px) {
     width: 70rem;
