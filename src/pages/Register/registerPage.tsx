@@ -22,15 +22,11 @@ export const RegisterPage: React.FC = () => {
   };
 
   const onSubmit = () => {
-    let uid = watch("userid");
-    let pwd = watch("password");
-    let eml = watch("email");
     setUserData({
-      userid: uid,
-      password: pwd,
-      email: eml,
+      userid: watch("userid"),
+      password: watch("password"),
+      email: watch("email"),
     });
-    console.log(userData?.email, userData?.password, userData?.userid);
   };
   useEffect(() => {
     console.log(userData?.email, userData?.password, userData?.userid);
@@ -42,24 +38,30 @@ export const RegisterPage: React.FC = () => {
       </AuthFormTitle>
       <AuthForm onSubmit={handleSubmit(onSubmit)}>
         <AuthForm.Input
-          placeholder="이메일"
+          placeholder={
+            !Boolean(errors.email) ? "이메일" : errors.email?.message
+          }
           {...register("email", {
             required: "이메일은 필수입니다",
           })}
         />
-        <AuthForm.ErrorMsg>{errors.email?.message}</AuthForm.ErrorMsg>
+        {/* <AuthForm.ErrorMsg>{errors.email?.message}</AuthForm.ErrorMsg> */}
         <AuthForm.Input
-          placeholder="닉네임"
+          placeholder={
+            !Boolean(errors.userid) ? "닉네임" : errors.userid?.message
+          }
           {...register("userid", {
             required: "닉네임은 필수입니다",
             minLength: 2,
             maxLength: 12,
           })}
         />
-        <AuthForm.ErrorMsg>{errors.userid?.message}</AuthForm.ErrorMsg>
+        {/* <AuthForm.ErrorMsg>{errors.userid?.message}</AuthForm.ErrorMsg> */}
         <AuthForm.PwInput
           type="password"
-          placeholder="비밀번호"
+          placeholder={
+            !Boolean(errors.password) ? "비밀번호" : errors.password?.message
+          }
           {...register("password", {
             required: "비밀번호는 필수입니다",
             minLength: {
@@ -91,11 +93,11 @@ export const RegisterPage: React.FC = () => {
             },
           })}
         />
-        <AuthForm.ErrorMsg>{errors.password?.message}</AuthForm.ErrorMsg>
+        {/* <AuthForm.ErrorMsg>{errors.password?.message}</AuthForm.ErrorMsg> */}
+        <AuthForm.SubmitBtnBox>
+          <AuthForm.SubmitBtn>회원 가입</AuthForm.SubmitBtn>
+        </AuthForm.SubmitBtnBox>
       </AuthForm>
-      <AuthForm.SubmitBtnBox>
-        <AuthForm.SubmitBtn>회원 가입</AuthForm.SubmitBtn>
-      </AuthForm.SubmitBtnBox>
       <UnderAuthForm>
         <UnderAuthForm.TextBox>
           <UnderAuthForm.AskAccountText>
