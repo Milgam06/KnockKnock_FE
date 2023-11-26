@@ -84,7 +84,7 @@ export const AuthFormTitle = styled.span`
 `;
 
 export const AuthSubmitButtonBox = styled.div`
-  margin-top: 10rem;
+  margin-top: 5rem;
   height: auto;
   display: flex;
   justify-content: center;
@@ -93,7 +93,7 @@ export const AuthSubmitButtonBox = styled.div`
 `;
 
 export const AuthSubmitButton = styled.button`
-  width: 90rem;
+  width: 85rem;
   height: 5rem;
   font-size: 3rem;
   border-radius: 1rem;
