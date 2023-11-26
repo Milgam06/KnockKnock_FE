@@ -28,10 +28,11 @@ export const ButtonContainer = styled.button<ButtonValue>`
     font-size: ${(props) => props.sizes + 0.5}rem;
     color: #fff;
     background-color: #ffa18d;
-    box-shadow: 0 10px 10px 0 ${colors.primary};
+    box-shadow: 0 5px 10px 0 ${colors.primary};
   }
   &:active {
-    scale: 1;
     color: ${colors.primary};
+    scale: 1;
+    box-shadow: none;
   }
 `;
