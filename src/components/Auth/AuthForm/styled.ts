@@ -13,7 +13,7 @@ export const AuthFormBox = styled.form`
 
 export const AuthInput = styled.input`
   margin-top: 2rem;
-  width: 100rem;
+  width: 95rem;
   height: 10rem;
   font-size: 3rem;
   padding-left: 2rem;
@@ -21,14 +21,13 @@ export const AuthInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
-
   @media screen and (max-width: 1350px) {
-    width: 80rem;
+    width: 75rem;
     height: 8rem;
     font-size: 2.5rem;
   }
   @media screen and (max-width: 1050px) {
-    width: 60rem;
+    width: 55rem;
     height: 6rem;
     font-size: 2rem;
   }
@@ -36,7 +35,7 @@ export const AuthInput = styled.input`
 
 export const AuthPwInput = styled.input`
   margin-top: 2rem;
-  width: 100rem;
+  width: 95rem;
   height: 10rem;
   font-size: 3rem;
   padding-left: 2rem;
@@ -50,12 +49,12 @@ export const AuthPwInput = styled.input`
     letter-spacing: normal;
   }
   @media screen and (max-width: 1350px) {
-    width: 80rem;
+    width: 75rem;
     height: 8rem;
     font-size: 2.5rem;
   }
   @media screen and (max-width: 1050px) {
-    width: 60rem;
+    width: 55rem;
     height: 6rem;
     font-size: 2rem;
   }
@@ -85,7 +84,7 @@ export const AuthFormTitle = styled.span`
 `;
 
 export const AuthSubmitButtonBox = styled.div`
-  margin-top: 8rem;
+  margin-top: 10rem;
   height: auto;
   display: flex;
   justify-content: center;
@@ -153,6 +152,6 @@ export const SwitchAuthForm = styled.span`
   font-size: 2rem;
   color: ${colors.secondary};
   border-bottom: 1px solid ${colors.secondary};
-  cursor: pointer;
   padding-bottom: 0.5rem;
+  cursor: pointer;
 `;
