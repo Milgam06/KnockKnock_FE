@@ -115,12 +115,12 @@ export const AuthSubmitButton = styled.button`
     box-shadow: none;
   }
   @media screen and (max-width: 1350px) {
-    width: 70rem;
+    width: 65rem;
     height: 4.5rem;
     font-size: 2.5rem;
   }
   @media screen and (max-width: 1050px) {
-    width: 50rem;
+    width: 45rem;
     height: 4rem;
     font-size: 2rem;
   }
