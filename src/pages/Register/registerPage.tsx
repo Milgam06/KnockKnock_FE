@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   AuthFormElements,
   AuthFormTitle,
   AuthForm,
   UnderAuthForm,
 } from "../../components";
+import { signUp } from "../../service";
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
@@ -21,12 +23,21 @@ export const RegisterPage: React.FC = () => {
     navigate("/login");
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     setUserData({
       userid: watch("userid"),
       password: watch("password"),
       email: watch("email"),
     });
+    if (userData?.email && userData?.userid && userData?.password) {
+      try {
+        await signUp(userData.email, userData.userid, userData.password);
+      } catch (error) {
+        console.error("회원가입 실패 : ", error);
+      }
+    } else {
+      alert("회원가입 실패");
+    }
   };
   useEffect(() => {
     console.log(userData?.email, userData?.password, userData?.userid);
