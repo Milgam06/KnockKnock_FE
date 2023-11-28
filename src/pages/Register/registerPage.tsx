@@ -11,6 +11,7 @@ import {
 import { signUp } from "../../service";
 
 export const RegisterPage: React.FC = () => {
+  console.log(process.env.REACT_APP_FIREBASE_API_KEY, "asdfgh");
   const navigate = useNavigate();
   const [userData, setUserData] = useState<AuthFormElements>();
   const {
