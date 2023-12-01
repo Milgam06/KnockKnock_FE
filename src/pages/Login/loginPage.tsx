@@ -1,5 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { signIn } from "../../service/firebase";
 import {
   AuthFormElements,
   AuthFormTitle,
@@ -9,6 +12,7 @@ import {
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState<AuthFormElements>();
   const {
     register,
     watch,
@@ -18,25 +22,49 @@ export const LoginPage: React.FC = () => {
   const onGoRegister = () => {
     navigate("/register");
   };
+
+  const onSubmit = async () => {
+    console.log("asdf");
+    const oldUser = {
+      email: watch("email"),
+      password: watch("password"),
+    };
+    setUserData(oldUser);
+    if (userData?.email && userData?.password !== undefined) {
+      try {
+        await signIn(userData.email, userData.password);
+        alert("로그인 성공");
+      } catch (error) {
+        console.error("로그인 실패 : ", error);
+      }
+    } else {
+      alert("로그인 asdf");
+    }
+  };
+
   return (
     <>
       <AuthFormTitle>
         <AuthFormTitle.Title>로그인</AuthFormTitle.Title>
       </AuthFormTitle>
-      <AuthForm>
+      <AuthForm onSubmit={handleSubmit(onSubmit)}>
         <AuthForm.Input
-          placeholder="이메일"
+          placeholder={
+            !Boolean(errors.email) ? "이메일" : errors.email?.message
+          }
           {...register("email", {
             required: "이메일은 필수입니다",
             pattern: {
-              value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
+              value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
               message: "올바른 이메일 형식이 아닙니다.",
             },
           })}
         />
         <AuthForm.PwInput
           type="password"
-          placeholder="비밀번호"
+          placeholder={
+            !Boolean(errors.password) ? "비밀번호" : errors.password?.message
+          }
           {...register("password", {
             required: "비밀번호는 필수입니다",
             minLength: {
@@ -44,8 +72,8 @@ export const LoginPage: React.FC = () => {
               message: "비밀번호는 최소 4자리여야 합니다.",
             },
             maxLength: {
-              value: 12,
-              message: "비밀번호는 최대 12자리를 넘을 수 없습니다.",
+              value: 16,
+              message: "비밀번호는 최대 16자리를 넘을 수 없습니다.",
             },
             validate: (password) => {
               const hasUppercase = /[A-Z]/.test(password);
@@ -68,10 +96,11 @@ export const LoginPage: React.FC = () => {
             },
           })}
         />
+        <AuthForm.SubmitBtnBox>
+          <AuthForm.SubmitBtn>로그인</AuthForm.SubmitBtn>
+        </AuthForm.SubmitBtnBox>
       </AuthForm>
-      <AuthForm.SubmitBtnBox>
-        <AuthForm.SubmitBtn>로그인</AuthForm.SubmitBtn>
-      </AuthForm.SubmitBtnBox>
+      {console.log(errors.email?.message, errors.password?.message)}
       <UnderAuthForm>
         <UnderAuthForm.TextBox>
           <UnderAuthForm.AskAccountText>

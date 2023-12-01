@@ -8,10 +8,9 @@ import {
   AuthForm,
   UnderAuthForm,
 } from "../../components";
-import { signUp } from "../../service";
+import { signUp } from "../../service/firebase";
 
 export const RegisterPage: React.FC = () => {
-  console.log(process.env.REACT_APP_FIREBASE_API_KEY, "asdfgh");
   const navigate = useNavigate();
   const [userData, setUserData] = useState<AuthFormElements>();
   const {
@@ -25,24 +24,28 @@ export const RegisterPage: React.FC = () => {
   };
 
   const onSubmit = async () => {
-    setUserData({
+    const newUser = {
+      email: watch("email"),
       userid: watch("userid"),
       password: watch("password"),
-      email: watch("email"),
-    });
-    if (userData?.email && userData?.userid && userData?.password) {
+    };
+    setUserData(newUser);
+    if (
+      userData?.email &&
+      userData?.userid &&
+      userData?.password !== undefined
+    ) {
       try {
         await signUp(userData.email, userData.userid, userData.password);
+        alert("회원가입 성공");
       } catch (error) {
         console.error("회원가입 실패 : ", error);
       }
     } else {
-      alert("회원가입 실패");
+      alert("회원가입 asdf");
     }
   };
-  useEffect(() => {
-    console.log(userData?.email, userData?.password, userData?.userid);
-  }, [userData]);
+  useEffect(() => {}, [userData]);
   return (
     <>
       <AuthFormTitle>
@@ -55,6 +58,10 @@ export const RegisterPage: React.FC = () => {
           }
           {...register("email", {
             required: "이메일은 필수입니다",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+              message: "이메일 형식이 올바르지 않습니다",
+            },
           })}
         />
         {/* <AuthForm.ErrorMsg>{errors.email?.message}</AuthForm.ErrorMsg> */}
@@ -82,7 +89,7 @@ export const RegisterPage: React.FC = () => {
             },
             maxLength: {
               value: 16,
-              message: "비밀번호는 최대 12자리를 넘을 수 없습니다.",
+              message: "비밀번호는 최대 16자리를 넘을 수 없습니다.",
             },
             validate: (password) => {
               const hasUppercase = /[A-Z]/.test(password);
