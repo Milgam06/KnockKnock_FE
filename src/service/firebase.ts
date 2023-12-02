@@ -1,10 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { AuthFormElements } from "../components";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  setPersistence,
+  browserLocalPersistence,
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -58,6 +59,8 @@ export const signUp = async (
 
 export const signIn = async (email: string, password: string) => {
   try {
+    await setPersistence(firebaseAuth, browserLocalPersistence);
+    console.log(setPersistence(firebaseAuth, browserLocalPersistence), "sadf");
     const oldUserCreditial = await signInWithEmailAndPassword(
       firebaseAuth,
       email,
