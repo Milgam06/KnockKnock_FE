@@ -1,10 +1,10 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { Global } from "@emotion/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalStyle } from "./styles";
 import { Navbar } from "./components";
+import React from "react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
