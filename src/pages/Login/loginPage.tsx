@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 
 import { signIn } from "../../service/firebase";
 import {
@@ -9,6 +10,7 @@ import {
   AuthForm,
   UnderAuthForm,
 } from "../../components";
+import { authState } from "../../atoms";
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
@@ -33,7 +35,6 @@ export const LoginPage: React.FC = () => {
     if (userData?.email && userData?.password !== undefined) {
       try {
         await signIn(userData.email, userData.password);
-        alert("로그인 성공");
       } catch (error) {
         console.error("로그인 실패 : ", error);
       }
