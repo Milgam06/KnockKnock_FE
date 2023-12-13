@@ -48,18 +48,14 @@ export const signUp = async (
 export const signIn = async (email: string, password: string) => {
   try {
     await setPersistence(firebaseAuth, browserLocalPersistence);
-    console.log(
-      setPersistence(firebaseAuth, browserLocalPersistence),
-      "sadfdd"
-    );
     const oldUserCreditial = await signInWithEmailAndPassword(
       firebaseAuth,
       email,
       password
     );
-
-    console.log("Successfully signed in:", oldUserCreditial.user.email);
+    console.log("Successfully signed in:", oldUserCreditial.user.displayName);
   } catch (error) {
     console.error("Error signing in:", error);
+    return error;
   }
 };
