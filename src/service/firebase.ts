@@ -7,6 +7,8 @@ import {
   setPersistence,
   browserLocalPersistence,
 } from "firebase/auth";
+import { useRecoilValue } from "recoil";
+import { authState } from "../atoms";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -20,20 +22,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth(firebaseApp);
-
-// export {
-//   firebaseAuth,
-//   createUserWithEmailAndPassword,
-//   signInWithEmailAndPassword,
-//   updateProfile,
-// };
-
-// import {
-//   firebaseAuth,
-//   createUserWithEmailAndPassword,
-//   signInWithEmailAndPassword,
-//   updateProfile,
-// } from "./firebase";
 
 export const signUp = async (
   email: string,
@@ -66,6 +54,8 @@ export const signIn = async (email: string, password: string) => {
       email,
       password
     );
+    const [, setAuthState] = useRecoilValue(authState);
+    setAuthState(true);
     console.log("Successfully signed in:", oldUserCreditial.user.email);
   } catch (error) {
     console.error("Error signing in:", error);
