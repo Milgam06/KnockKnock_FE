@@ -14,7 +14,6 @@ import { authState } from "../../atoms";
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
-  const [userData, setUserData] = useState<AuthFormElements>();
   const [authStateValue, setAuthStateValue] = useRecoilState(authState);
   const {
     register,
@@ -26,41 +25,18 @@ export const LoginPage: React.FC = () => {
     navigate("/register");
   };
 
-  // const onSubmit = async () => {
-  //   const oldUser = {
-  //     email: watch("email"),
-  //     password: watch("password"),
-  //   };
-  //   setUserData(oldUser);
-  //   if (userData?.email && userData?.password !== undefined) {
-  //     try {
-  //       await signIn(userData.email, userData.password);
-  //       setAuthStateValue(true);
-  //       console.log(authStateValue, "asdf");
-  //     } catch (error) {
-  //       console.error("로그인 실패 : ", error);
-  //     }
-  //   } else {
-  //     alert("로그인 asdf");
-  //   }
-  // };
-
   const onSubmit = async () => {
-    const newUser = {
+    const oldUser: AuthFormElements = {
       email: watch("email"),
       password: watch("password"),
     };
-
-    setUserData(newUser);
-
     try {
-      await signIn(newUser.email, newUser.password);
+      await signIn(oldUser.email, oldUser.password);
+      console.log(authStateValue, "asdf");
       setAuthStateValue(true);
     } catch (error) {
       console.error("로그인 실패 : ", error);
     }
-
-    console.log(authStateValue, "asdf");
   };
 
   return (

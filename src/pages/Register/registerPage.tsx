@@ -27,31 +27,21 @@ export const RegisterPage: React.FC = () => {
   };
 
   const onSubmit = async () => {
-    const newUser = {
+    const newUser: AuthFormElements = {
       email: watch("email"),
-      userid: watch("userid"),
+      userid: watch("userid") || "",
       password: watch("password"),
     };
-    setUserData(newUser);
-    if (
-      userData?.email &&
-      userData?.userid &&
-      userData?.password !== undefined
-    ) {
-      try {
-        await signUp(userData.email, userData.userid, userData.password);
-        alert("회원가입 성공");
+    try {
+      await signUp(newUser.email, newUser.userid, newUser.password);
+      alert("회원가입 성공");
 
-        // setAuthStateValue(true);
-        // console.log(authStateValue, "asdf");
-      } catch (error) {
-        console.error("회원가입 실패 : ", error);
-      }
-    } else {
-      alert("회원가입 asdf");
+      // setAuthStateValue(true);
+      // console.log(authStateValue, "asdf");
+    } catch (error) {
+      console.error("회원가입 실패 : ", error);
     }
   };
-  useEffect(() => {}, [userData]);
   return (
     <>
       <AuthFormTitle>
