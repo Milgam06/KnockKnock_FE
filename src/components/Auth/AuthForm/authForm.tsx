@@ -1,8 +1,8 @@
 import * as S from "./styled";
 
 export interface AuthFormElements {
-  email?: string;
-  userid?: string;
+  email: string;
+  userid: string;
   password: string;
 }
 
