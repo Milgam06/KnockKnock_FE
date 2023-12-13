@@ -93,7 +93,7 @@ export const AuthSubmitButtonBox = styled.div`
 `;
 
 export const AuthSubmitButton = styled.button`
-  width: 85rem;
+  width: 95rem;
   height: 5rem;
   font-size: 3rem;
   border-radius: 1rem;
@@ -102,17 +102,16 @@ export const AuthSubmitButton = styled.button`
   border-color: ${colors.primary};
   transition: all 0.3s;
   &:hover {
-    scale: 1.1;
     color: #000;
     border-color: #000;
-    box-shadow: 0 10px 10px 0 ${colors.primary};
+    /* box-shadow: 0 10px 10px 0 ${colors.primary};2 */
   }
   &:active {
-    background-color: ${colors.tertiary};
+    /* background-color: ${colors.tertiary}; */
     color: #fff;
-    border: 0;
+    /* border: 0; */
     scale: 1;
-    box-shadow: none;
+    /* box-shadow: none; */
   }
   @media screen and (max-width: 1350px) {
     width: 65rem;
