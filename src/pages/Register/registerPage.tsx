@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
 
 import {
   AuthFormElements,
@@ -9,10 +10,12 @@ import {
   UnderAuthForm,
 } from "../../components";
 import { signUp } from "../../service/firebase";
+import { authState } from "../../atoms";
 
 export const RegisterPage: React.FC = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState<AuthFormElements>();
+  // const [authStateValue, setAuthStateValue] = useRecoilState(authState);
   const {
     register,
     handleSubmit,
@@ -38,6 +41,9 @@ export const RegisterPage: React.FC = () => {
       try {
         await signUp(userData.email, userData.userid, userData.password);
         alert("회원가입 성공");
+
+        // setAuthStateValue(true);
+        // console.log(authStateValue, "asdf");
       } catch (error) {
         console.error("회원가입 실패 : ", error);
       }
