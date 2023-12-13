@@ -7,7 +7,7 @@ import {
   setPersistence,
   browserLocalPersistence,
 } from "firebase/auth";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { authState } from "../atoms";
 
 const firebaseConfig = {
@@ -48,14 +48,16 @@ export const signUp = async (
 export const signIn = async (email: string, password: string) => {
   try {
     await setPersistence(firebaseAuth, browserLocalPersistence);
-    console.log(setPersistence(firebaseAuth, browserLocalPersistence), "sadf");
+    console.log(
+      setPersistence(firebaseAuth, browserLocalPersistence),
+      "sadfdd"
+    );
     const oldUserCreditial = await signInWithEmailAndPassword(
       firebaseAuth,
       email,
       password
     );
-    const [, setAuthState] = useRecoilValue(authState);
-    setAuthState(true);
+
     console.log("Successfully signed in:", oldUserCreditial.user.email);
   } catch (error) {
     console.error("Error signing in:", error);
