@@ -5,17 +5,20 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalStyle } from "./styles";
 import { Navbar } from "./components";
 import React from "react";
+import { RecoilRoot } from "recoil";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <>
-    <Router>
-      <GlobalStyle />
-      <Navbar />
-      <App />
-    </Router>
+    <RecoilRoot>
+      <Router>
+        <GlobalStyle />
+        <Navbar />
+        <App />
+      </Router>
+    </RecoilRoot>
   </>
 );
 
