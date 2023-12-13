@@ -29,21 +29,6 @@ export const RogoWrapper = styled.div`
   cursor: pointer;
 `;
 
-export const FuncBtnWrapper = styled.div`
-  width: 30rem;
-  height: 10rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  /* border: 1px solid red; */
-  @media screen and (max-width: 1350px) {
-    width: 25rem;
-  }
-  @media screen and (max-width: 1050px) {
-    width: 20rem;
-  }
-`;
-
 export const TextImage = styled.img`
   max-width: 23rem;
   min-width: 20rem;
@@ -56,7 +41,22 @@ export const LogoImage = styled.img`
   height: 5.5rem;
 `;
 
-export const FunctionButton = styled.button<FontValue>`
+export const FuncTextWrapper = styled.div`
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid red;
+  @media screen and (max-width: 1350px) {
+    width: 25rem;
+  }
+  @media screen and (max-width: 1050px) {
+    width: 20rem;
+  }
+`;
+
+export const FunctionText = styled.span<FontValue>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,11 +66,11 @@ export const FunctionButton = styled.button<FontValue>`
   font-family: "NanumSquareNeo-Variable";
   text-align: center;
   border: none;
-  width: 14rem;
+  width: 15rem;
   height: 5rem;
-  border-radius: 2rem;
   transition: all 0.2s;
-  /* border: 1px solid red; */
+  border: 1px solid red;
+  cursor: pointer;
   @media screen and (max-width: 1350px) {
     width: 10rem;
     height: 4rem;

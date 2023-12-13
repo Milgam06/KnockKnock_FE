@@ -2,18 +2,30 @@ import React from "react";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
 import { LogoJpg, KnockJpg } from "../../../assets/Image";
+import { useRecoilState } from "recoil";
+import { authState } from "../../../atoms";
 
 export const Navbar: React.FC = () => {
+  const [authStateValue, setAuthStateValue] = useRecoilState(authState);
   const navigate = useNavigate();
   const toMain = () => {
     navigate("./");
   };
   const toRegister = () => {
-    navigate("./register");
+    navigate("/register");
   };
   const toLogin = () => {
-    navigate("./login");
+    navigate("/login");
   };
+
+  const toLogout = () => {
+    setAuthStateValue(false);
+    console.log(authStateValue);
+  };
+  const toProfile = () => {
+    navigate("/profile");
+  };
+
   return (
     <>
       <S.NavbarWrapper>
@@ -22,14 +34,27 @@ export const Navbar: React.FC = () => {
             <S.LogoImage src={LogoJpg} />
             <S.TextImage src={KnockJpg} />
           </S.RogoWrapper>
-          <S.FuncBtnWrapper>
-            <S.FunctionButton sizes={3} weight={100} onClick={toRegister}>
-              Register
-            </S.FunctionButton>
-            <S.FunctionButton sizes={3} weight={100} onClick={toLogin}>
-              Login
-            </S.FunctionButton>
-          </S.FuncBtnWrapper>
+          <S.FuncTextWrapper>
+            {authStateValue ? (
+              <>
+                <S.FunctionText sizes={3} weight={100} onClick={toLogout}>
+                  Log out
+                </S.FunctionText>
+                <S.FunctionText sizes={3} weight={100} onClick={toProfile}>
+                  profiles
+                </S.FunctionText>
+              </>
+            ) : (
+              <>
+                <S.FunctionText sizes={3} weight={100} onClick={toRegister}>
+                  Register
+                </S.FunctionText>
+                <S.FunctionText sizes={3} weight={100} onClick={toLogin}>
+                  Login
+                </S.FunctionText>
+              </>
+            )}
+          </S.FuncTextWrapper>
         </S.NavbarContentContainer>
       </S.NavbarWrapper>
     </>
