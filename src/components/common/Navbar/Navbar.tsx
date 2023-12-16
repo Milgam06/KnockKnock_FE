@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
 import { LogoJpg, KnockJpg } from "../../../assets/Image";
 import { useRecoilState } from "recoil";
 import { authState } from "../../../atoms";
+import { onSignOut } from "../../../service";
 
 export const Navbar: React.FC = () => {
   const [authStateValue, setAuthStateValue] = useRecoilState(authState);
@@ -20,12 +21,16 @@ export const Navbar: React.FC = () => {
 
   const toLogout = () => {
     setAuthStateValue(false);
+    onSignOut();
     console.log(authStateValue);
   };
   const toProfile = () => {
     navigate("/profile");
   };
 
+  useEffect(() => {
+    console.log(authStateValue);
+  }, [authStateValue]);
   return (
     <>
       <S.NavbarWrapper>
