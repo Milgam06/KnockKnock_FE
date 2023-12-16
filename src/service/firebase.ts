@@ -3,10 +3,11 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
   setPersistence,
-  browserLocalPersistence,
   browserSessionPersistence,
+  browserLocalPersistence,
 } from "firebase/auth";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { authState } from "../atoms";
@@ -20,11 +21,16 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth(firebaseApp);
 
-export const signUp = async (
+export interface CurrentUserData {
+  nickname: string;
+  email: string;
+  isValid: boolean;
+}
+
+export const onSignUp = async (
   email: string,
   userid: string,
   password: string
@@ -43,10 +49,11 @@ export const signUp = async (
     );
   } catch (error) {
     console.error("Error registering new user:", error);
+    throw error;
   }
 };
 
-export const signIn = async (email: string, password: string) => {
+export const onSignIn = async (email: string, password: string) => {
   try {
     const oldUserCreditial = await signInWithEmailAndPassword(
       firebaseAuth,
@@ -58,5 +65,26 @@ export const signIn = async (email: string, password: string) => {
   } catch (error) {
     console.error("Error signing in:", error);
     throw error;
+  }
+};
+
+export const onSignOut = async () => {
+  try {
+    await signOut(firebaseAuth);
+    console.log("Successfully signed out");
+  } catch (error) {
+    console.error("signOut error: ", error);
+  }
+};
+
+export const onGetUser = (): CurrentUserData => {
+  const user = firebaseAuth.currentUser;
+  if (user != null) {
+    const nickname = user.displayName || "";
+    const email = user.email || "";
+    return { nickname, email, isValid: true };
+  } else {
+    console.log("NoUsers");
+    return { nickname: "", email: "", isValid: false };
   }
 };
