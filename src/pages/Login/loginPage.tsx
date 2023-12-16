@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
-import { signIn } from "../../service/firebase";
+import { onSignIn } from "../../service";
 import {
   AuthFormElements,
   AuthFormTitle,
@@ -19,24 +19,33 @@ export const LoginPage: React.FC = () => {
     register,
     watch,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<AuthFormElements>();
-  const onGoRegister = () => {
-    navigate("/register");
-  };
 
   const onSubmit = async () => {
+    //비동기처리
     const oldUser: AuthFormElements = {
       email: watch("email"),
+      userid: "",
       password: watch("password"),
     };
     try {
-      await signIn(oldUser.email, oldUser.password);
-      console.log(authStateValue, "asdf");
+      await onSignIn(oldUser.email, oldUser.password); //signIn함수 처리 대기
       setAuthStateValue(true);
+      navigate("/profile");
     } catch (error) {
       console.error("로그인 실패 : ", error);
+      reset({
+        email: "",
+        userid: "",
+        password: "",
+      });
     }
+  };
+
+  const onGoRegister = () => {
+    navigate("/register");
   };
 
   return (

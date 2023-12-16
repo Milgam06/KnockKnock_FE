@@ -9,7 +9,7 @@ import {
   AuthForm,
   UnderAuthForm,
 } from "../../components";
-import { signUp } from "../../service/firebase";
+import { onSignUp } from "../../service";
 import { authState } from "../../atoms";
 
 export const RegisterPage: React.FC = () => {
@@ -33,13 +33,13 @@ export const RegisterPage: React.FC = () => {
       password: watch("password"),
     };
     try {
-      await signUp(newUser.email, newUser.userid, newUser.password);
+      await onSignUp(newUser.email, newUser.userid, newUser.password);
       alert("회원가입 성공");
-
       // setAuthStateValue(true);
       // console.log(authStateValue, "asdf");
     } catch (error) {
       console.error("회원가입 실패 : ", error);
+      console.log(typeof error);
     }
   };
   return (
