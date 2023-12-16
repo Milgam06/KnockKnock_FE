@@ -8,6 +8,7 @@ import {
   LoginPage,
   CommunityPage,
   NotFoundPage,
+  ProfilePage,
 } from "./pages";
 
 export const App: React.FC = () => {
@@ -18,6 +19,7 @@ export const App: React.FC = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/category" element={<CategoryPage />} />
       <Route path="/community/:comm" element={<CommunityPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
