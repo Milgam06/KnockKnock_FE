@@ -29,7 +29,7 @@ export const SubTitle = styled.span`
 `;
 
 export const ButtonContentWrapper = styled.div`
-  margin-top: 7rem;
+  margin-top: 5rem;
   height: auto;
   /* border: 1px solid red; */
   display: flex;
