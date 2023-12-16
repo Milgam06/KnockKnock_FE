@@ -6,6 +6,7 @@ import {
   updateProfile,
   setPersistence,
   browserLocalPersistence,
+  browserSessionPersistence,
 } from "firebase/auth";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { authState } from "../atoms";
@@ -47,15 +48,15 @@ export const signUp = async (
 
 export const signIn = async (email: string, password: string) => {
   try {
-    await setPersistence(firebaseAuth, browserLocalPersistence);
     const oldUserCreditial = await signInWithEmailAndPassword(
       firebaseAuth,
       email,
       password
     );
+    await setPersistence(firebaseAuth, browserSessionPersistence);
     console.log("Successfully signed in:", oldUserCreditial.user.displayName);
   } catch (error) {
     console.error("Error signing in:", error);
-    return error;
+    throw error;
   }
 };
