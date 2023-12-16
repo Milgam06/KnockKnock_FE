@@ -1,9 +1,12 @@
-import { ContentsButton } from "../../components";
-import * as S from "./styled";
-import * as I from "../../assets/Image";
 import { useNavigate } from "react-router-dom";
 
+import { ContentsButton } from "../../components";
+import { onGetUser } from "../../service";
+import * as S from "./styled";
+import * as I from "../../assets/Image";
+
 export const CategoryPage: React.FC = () => {
+  const nowUser = onGetUser();
   const navigate = useNavigate();
   const onClick = (num: Number) => {
     navigate(`/community/${num}`);
@@ -12,9 +15,13 @@ export const CategoryPage: React.FC = () => {
     <>
       <S.TitleWrapper>
         <S.InnerTitleBox>
-          <S.MainTitle>반가워요 user님!</S.MainTitle>
+          <S.MainTitle>
+            {nowUser.isValid
+              ? `반가워요 ${nowUser.nickname}님!`
+              : "처음 오셨나요?"}
+          </S.MainTitle>
           <S.SubTitle>
-            이제 회원님의 취미를 선택하고, 많은 유저들과 함께 해 봐요!
+            회원님의 취미를 선택하고, 많은 유저들과 함께 해 봐요!
           </S.SubTitle>
         </S.InnerTitleBox>
       </S.TitleWrapper>
