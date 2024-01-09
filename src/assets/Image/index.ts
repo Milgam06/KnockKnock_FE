@@ -1,8 +1,9 @@
-export const KnockJpg = require("./knock knock.png");
-export const LogoJpg = require("./logo.jpg");
-export const ArtIcon = require("./art icon.png");
-export const GymIcon = require("./gym(health) icon.png");
-export const MusicIcon = require("./music icon.png");
-export const SportsIcon = require("./sports icon.png");
-export const GameIcon = require("./game icon.png");
-export const CookingIcon = require("./cooking icon.png");
+export { default as Logo } from "./logo.svg";
+export { default as Knock } from "./knock knock.svg";
+export { default as ArtIcon } from "./art icon.svg";
+export { default as CookingIcon } from "./cooking icon.svg";
+export { default as GameIcon } from "./game icon.svg";
+export { default as GymIcon } from "./gym icon.svg";
+export { default as MusicIcon } from "./music icon.svg";
+export { default as SportsIcon } from "./sports icon.svg";
+export { default as SearchIcon } from "./search icon.svg";
