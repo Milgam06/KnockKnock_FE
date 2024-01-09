@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
-import { LogoJpg, KnockJpg } from "../../../assets/Image";
+import { Logo, Knock } from "../../../assets/Image";
 import { useRecoilState } from "recoil";
 import { authState } from "../../../atoms";
-import { onSignOut } from "../../../service";
+import { onSignOut } from "../../../api";
 
 export const Navbar: React.FC = () => {
   const [authStateValue, setAuthStateValue] = useRecoilState(authState);
@@ -36,8 +36,8 @@ export const Navbar: React.FC = () => {
       <S.NavbarWrapper>
         <S.NavbarContentContainer>
           <S.RogoWrapper onClick={toMain}>
-            <S.LogoImage src={LogoJpg} />
-            <S.TextImage src={KnockJpg} />
+            <S.LogoImage src={Logo} />
+            <S.TextImage src={Knock} />
           </S.RogoWrapper>
           <S.FuncTextWrapper>
             {authStateValue ? (

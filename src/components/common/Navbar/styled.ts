@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { FontValue } from "../../../styles";
 
 export const NavbarWrapper = styled.div`
+  top: 0;
   display: flex;
   justify-content: center;
   width: 100vw;
@@ -42,12 +43,10 @@ export const LogoImage = styled.img`
 `;
 
 export const FuncTextWrapper = styled.div`
-  width: 30rem;
-  height: 10rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  column-gap: 1rem;
   @media screen and (max-width: 1350px) {
     width: 25rem;
   }
@@ -64,12 +63,11 @@ export const FunctionText = styled.span<FontValue>`
   font-size: ${(props) => props.sizes}rem;
   font-weight: ${(props) => props.weight};
   font-family: "NanumSquareNeo-Variable";
+  letter-spacing: 0.1rem;
   text-align: center;
   border: none;
-  width: 15rem;
-  height: 5rem;
+  padding: 1rem 2rem;
   transition: all 0.2s;
-  border: 1px solid red;
   cursor: pointer;
   @media screen and (max-width: 1350px) {
     width: 10rem;
