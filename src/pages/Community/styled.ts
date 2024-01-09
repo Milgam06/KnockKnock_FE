@@ -1,23 +1,35 @@
 import styled from "@emotion/styled";
 
+import { colors } from "../../styles";
+
 export const CommunitySearchBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  border: 1px solid ${colors.secondary};
+  border-radius: 5rem;
   column-gap: 1rem;
+  padding: 0rem 2rem;
+  background-color: #fefefe;
+`;
+export const CommunitySearchInput = styled.input`
+  width: 110rem;
+  height: 4rem;
+  background-color: transparent;
+  font-size: 1.6rem;
+  border: none;
 `;
 
 export const CommunityWrapper = styled.div`
-  margin-top: 1rem;
-  /* border: 1px solid red; */
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const CommunityBox = styled.div`
-  /* border: 1px solid red; */
+  margin-top: 2rem;
   background-color: #ffffff;
   width: 130rem;
   height: auto;
