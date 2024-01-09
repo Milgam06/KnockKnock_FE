@@ -9,7 +9,7 @@ import {
   AuthForm,
   UnderAuthForm,
 } from "../../components";
-import { onSignUp } from "../../service";
+import { onSignUp } from "../../api";
 import { authState } from "../../atoms";
 
 export const RegisterPage: React.FC = () => {

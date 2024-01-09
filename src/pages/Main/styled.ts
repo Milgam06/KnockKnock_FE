@@ -11,7 +11,6 @@ export const ContentWrapper = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  margin-top: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;

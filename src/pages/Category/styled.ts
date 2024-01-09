@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const TitleWrapper = styled.div`
   height: 15rem;
-  margin-top: 8rem;
   /* border: 1px solid red; */
   display: flex;
   align-items: center;

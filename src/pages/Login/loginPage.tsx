@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
-import { onSignIn } from "../../service";
+import { onSignIn } from "../../api";
 import {
   AuthFormElements,
   AuthFormTitle,

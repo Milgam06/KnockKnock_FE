@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import { ContentsButton } from "../../components";
-import { onGetUser } from "../../service";
+import { onGetUser } from "../../api";
 import * as S from "./styled";
 import * as I from "../../assets/Image";
 

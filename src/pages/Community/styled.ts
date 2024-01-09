@@ -1,7 +1,14 @@
 import styled from "@emotion/styled";
 
+export const CommunitySearchBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+`;
+
 export const CommunityWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 1rem;
   /* border: 1px solid red; */
   height: auto;
   display: flex;
@@ -10,7 +17,6 @@ export const CommunityWrapper = styled.div`
 `;
 
 export const CommunityBox = styled.div`
-  /* border: 1px solid red; */
   /* border: 1px solid red; */
   background-color: #ffffff;
   width: 130rem;
