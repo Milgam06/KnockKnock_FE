@@ -15,7 +15,6 @@ root.render(
     <RecoilRoot>
       <Router>
         <GlobalStyle />
-        <Navbar />
         <App />
       </Router>
     </RecoilRoot>
