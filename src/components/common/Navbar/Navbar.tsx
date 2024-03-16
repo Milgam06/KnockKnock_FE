@@ -2,12 +2,9 @@ import React, { useEffect } from "react";
 import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
 import { Logo, Knock } from "../../../assets/Image";
-import { useRecoilState } from "recoil";
-import { authState } from "../../../atoms";
 import { onSignOut } from "../../../api";
 
 export const Navbar: React.FC = () => {
-  const [authStateValue, setAuthStateValue] = useRecoilState(authState);
   const navigate = useNavigate();
   const toMain = () => {
     navigate("./");

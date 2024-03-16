@@ -7,6 +7,7 @@ export const AuthFormBox = styled.form`
   align-items: center;
   flex-direction: column;
   height: auto;
+  margin-top: 5rem;
   /* border: 1px solid red; */
 `;
 
@@ -20,7 +21,7 @@ export const AuthInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
-
+  font-family: "NanumSquareNeo-Variable";
   @media screen and (max-width: 1350px) {
     width: 75rem;
     height: 8rem;
@@ -67,6 +68,7 @@ export const AuthErrorMsg = styled.span`
 `;
 
 export const AuthFormTitleBox = styled.div`
+  margin-top: 7rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +128,7 @@ export const AuthSubmitButton = styled.button`
 `;
 
 export const BottomTextBoxWrapper = styled.div`
-  margin-top: 4rem;
+  margin-top: 5rem;
   height: 10rem;
   display: flex;
   justify-content: center;
