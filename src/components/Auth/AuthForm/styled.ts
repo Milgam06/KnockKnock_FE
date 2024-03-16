@@ -20,6 +20,7 @@ export const AuthInput = styled.input`
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
+
   @media screen and (max-width: 1350px) {
     width: 75rem;
     height: 8rem;
@@ -44,6 +45,7 @@ export const AuthPwInput = styled.input`
   border-bottom: 1px solid black;
   letter-spacing: 1rem;
   text-overflow: ellipsis;
+  font-family: "NanumSquareNeo-Variable";
   ::placeholder {
     letter-spacing: normal;
   }

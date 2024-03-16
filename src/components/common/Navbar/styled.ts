@@ -8,16 +8,20 @@ export const NavbarWrapper = styled.div`
   width: 100vw;
   height: 10rem;
   background-color: #ffffff;
+  @media screen and (max-width: 1050px) {
+    height: 8rem;
+  }
 `;
 
 export const NavbarContentContainer = styled.div`
-  width: 97vw;
+  width: 96vw;
   height: 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid red; */
-  @media screen and (max-width: 1350px) {
+  @media screen and (max-width: 1050px) {
+    height: 8rem;
   }
 `;
 
@@ -28,24 +32,38 @@ export const RogoWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
+  /* border: 1px solid red; */
+  @media screen and (max-width: 1050px) {
+    width: 23rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 export const TextImage = styled.img`
-  max-width: 23rem;
-  min-width: 20rem;
-  max-height: 2rem;
-  min-height: 3rem;
+  /* border: 1px solid red; */
+  width: 22rem;
+  height: 3rem;
+  @media screen and (max-width: 1050px) {
+    scale: 0.8;
+  }
 `;
 
 export const LogoImage = styled.img`
+  /* border: 1px solid red; */
   width: 5rem;
-  height: 5.5rem;
+  height: 6rem;
+  @media screen and (max-width: 1050px) {
+    scale: 0.8;
+  }
 `;
 
 export const FuncTextWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   column-gap: 1rem;
   @media screen and (max-width: 1350px) {
     width: 25rem;
@@ -64,18 +82,14 @@ export const FunctionText = styled.span<FontValue>`
   font-weight: ${(props) => props.weight};
   font-family: "NanumSquareNeo-Variable";
   letter-spacing: 0.1rem;
+  letter-spacing: 0.1rem;
   text-align: center;
   border: none;
   padding: 1rem 2rem;
   transition: all 0.2s;
   cursor: pointer;
-  @media screen and (max-width: 1350px) {
-    width: 10rem;
-    height: 4rem;
-    font-size: ${(props) => props.sizes - 0.5}rem;
-  }
   @media screen and (max-width: 1050px) {
-    width: 8rem;
+    width: 10rem;
     height: 4rem;
     font-size: ${(props) => props.sizes - 1}rem;
   }

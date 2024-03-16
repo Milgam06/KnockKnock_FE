@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { SearchIcon } from "../../assets/Image";
 
 import { colors } from "../../styles";
 
@@ -21,11 +22,50 @@ export const CommunitySearchInput = styled.input`
 `;
 
 export const CommunityWrapper = styled.div`
+  margin-top: 5rem;
+  border: 1px solid red;
   height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+export const SearchInput = styled.input`
+  width: 110rem;
+  height: 5rem;
+  background-color: #fff;
+  border: 1px solid red;
+  border-radius: 50px;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  font-family: "NanumSquareNeo-Variable";
+  ::placeholder {
+    background-image: ${SearchIcon};
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50px center;
+    color: #bababa;
+  }
+`;
+
+export const SearchInput = styled.input`
+  width: 110rem;
+  height: 5rem;
+  background-color: #fff;
+  border: 1px solid red;
+  border-radius: 50px;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  font-family: "NanumSquareNeo-Variable";
+  ::placeholder {
+    background-image: ${SearchIcon};
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50px center;
+    color: #bababa;
+  }
 `;
 
 export const CommunityBox = styled.div`
